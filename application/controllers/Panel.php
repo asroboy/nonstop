@@ -12,6 +12,8 @@ class Panel extends CI_Controller{
 		}	
 	}
 
+
+
 	public function Logout(){
 		$this->session->sess_destroy();
 		redirect(base_url('common/Auth'));
@@ -44,7 +46,7 @@ class Panel extends CI_Controller{
 		$this->load->view('common/index', $data);
 	}
 
-	public function URI(){
+	public function index(){
 		if ($this->uri->segment(3) == 'permiss') {
 			$this->Permission();
 		}elseif ($this->uri->segment(3) == 'Dashboard') {

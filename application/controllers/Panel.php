@@ -8,11 +8,15 @@ class Panel extends CI_Controller{
 		$this->load->model('Model_main');
 		$lib = $this->conf_status->adm_masuk();
 		if($this->session->userdata('status') != $this->conf_status->stat()){
-			redirect(base_url("Notfound"));
-		}	
+			redirect(base_url('common/Auth'));
+		}
 	}
 
 
+
+    public function test(){
+        echo "hellooooooooooooooooooooooooooooooo";
+    }
 
 	public function Logout(){
 		$this->session->sess_destroy();
@@ -46,7 +50,7 @@ class Panel extends CI_Controller{
 		$this->load->view('common/index', $data);
 	}
 
-	public function index(){
+	public function URI(){
 		if ($this->uri->segment(3) == 'permiss') {
 			$this->Permission();
 		}elseif ($this->uri->segment(3) == 'Dashboard') {

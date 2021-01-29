@@ -8,15 +8,9 @@ class Panel extends CI_Controller{
 		$this->load->model('Model_main');
 		$lib = $this->conf_status->adm_masuk();
 		if($this->session->userdata('status') != $this->conf_status->stat()){
-			redirect(base_url('common/Auth'));
-		}
+			redirect(base_url("Notfound"));
+		}	
 	}
-
-
-
-    public function test(){
-        echo "hellooooooooooooooooooooooooooooooo";
-    }
 
 	public function Logout(){
 		$this->session->sess_destroy();
